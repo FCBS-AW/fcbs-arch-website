@@ -15,9 +15,11 @@ There is **no build step, no package manager, no tooling**. It's hand-written HT
 
 ## Architecture
 
-### Eight pages, no templating
+### Twelve pages, no templating
 
-`index.html`, `kolbe.html`, `lepage.html`, `lacantina.html`, `quartz.html`, `optimum.html`, `ewd.html`, `contact.html`. Each is a complete standalone HTML document. The header block, mobile nav, and footer markup are **intentionally duplicated** across every page — there is no template engine and no includes. When you change shared markup (nav links, footer contact info, a new page in the dropdown), you must update **all eight files**.
+`index.html`, `kolbe.html`, `lepage.html`, `lacantina.html`, `quartz.html`, `optimum.html`, `ewd.html`, `contact.html`, plus four team interview pages: `bill-jacobs.html`, `kyle-donnelly.html`, `ashley-snell.html`, `drew-dekerlegand.html`. Each is a complete standalone HTML document. The header block, mobile nav, and footer markup are **intentionally duplicated** across every page — there is no template engine and no includes. When you change shared markup (nav links, footer contact info, a new page in the dropdown), you must update **every page** (`*.html`).
+
+**Team pages:** the homepage `#about` section is a 4-card team grid (initials, role, pull quote, specialty); each card links to that person's interview page (profile header → five Q&A → "Meet the Team" links to the other three → CTA band). Team pages use the brand-page header/footer and the `profile` / `qa` / `team-more` styles in `css/styles.css`. No headshots yet — each page has a comment showing where to swap the initials for an `<img>`.
 
 The subpages ship `<header class="header header--solid">` in markup, but `js/main.js` immediately swaps to `header--transparent` at the top of the page and back to `--solid` after 60px of scroll — so over a brand hero the header starts see-through, like the homepage. `index.html` does **not** load `main.js`; its own inline script only toggles `header--solid` (no transparent class involved).
 

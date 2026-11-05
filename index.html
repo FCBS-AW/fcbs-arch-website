@@ -23,7 +23,7 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-snap-type:y proximity;scroll-padding-top:72px}
-  .hero,.products,.projects,.values,.cta{scroll-snap-align:start}
+  .hero,.products,.projects,.team,.cta{scroll-snap-align:start}
   @media (pointer: coarse){html{scroll-snap-type:none}}
   body{font-family:'Inter',sans-serif;font-weight:400;font-size:16px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
   img,video{display:block;max-width:100%}
@@ -119,20 +119,24 @@
   .proj__name{font-family:'Fraunces',serif;font-size:28px;line-height:1;font-weight:400;letter-spacing:-0.02em;margin-bottom:6px}
   .proj__loc{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--ink-2)}
 
-  /* Values */
-  .values{padding:160px 0;background:var(--bg)}
-  .values__head{text-align:center;margin-bottom:100px}
-  .values__head h2{margin-top:24px;max-width:900px;margin-inline:auto}
-  .values__head h2 em{font-style:italic;color:var(--brass)}
-  .values__head .kicker{justify-content:center}
-  .values__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-  .val{padding:40px 32px;border:1px solid var(--line-2);background:var(--panel);transition:all .4s;position:relative;overflow:hidden}
-  .val::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--brass),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s}
-  .val:hover{border-color:var(--brass);background:rgba(240,96,32,.04)}
-  .val:hover::before{transform:scaleX(1)}
-  .val__num{font-family:'Fraunces',serif;font-size:14px;font-style:italic;color:var(--brass);margin-bottom:40px;letter-spacing:0}
-  .val__title{font-family:'Fraunces',serif;font-size:28px;line-height:1.1;font-weight:400;letter-spacing:-0.01em;margin-bottom:20px;color:var(--ink)}
-  .val__text{color:var(--ink-2);line-height:1.75;font-size:14px}
+  /* Team */
+  .team{padding:160px 0;background:var(--bg)}
+  .team__head{text-align:center;margin-bottom:100px}
+  .team__head h2{margin-top:24px;max-width:900px;margin-inline:auto}
+  .team__head h2 em{font-style:italic;color:var(--brass)}
+  .team__head .kicker{justify-content:center}
+  .team__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+  .member{display:flex;flex-direction:column;padding:40px 32px;border:1px solid var(--line-2);background:var(--panel);transition:all .4s;position:relative;overflow:hidden}
+  .member::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--brass),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+  .member:hover{border-color:var(--brass);background:rgba(240,96,32,.04)}
+  .member:hover::before{transform:scaleX(1)}
+  .member__initials{width:64px;height:64px;border-radius:50%;border:1px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--brass);margin-bottom:36px}
+  .member__role{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;color:var(--brass);margin-bottom:10px}
+  .member__name{font-family:'Fraunces',serif;font-size:28px;line-height:1.1;font-weight:400;letter-spacing:-0.01em;margin-bottom:20px;color:var(--ink)}
+  .member__quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-2);line-height:1.6;font-size:16px;margin-bottom:24px}
+  .member__focus{color:var(--muted);line-height:1.6;font-size:13px;margin-bottom:32px}
+  .member__cta{margin-top:auto;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;gap:8px;transition:gap .3s}
+  .member:hover .member__cta{gap:14px}
 
   /* CTA */
   .cta{padding:0;background:var(--bg);position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center}
@@ -167,7 +171,7 @@
     .products__head-right{text-align:left;max-width:none}
     .products__grid{grid-template-columns:repeat(3,1fr)}
     .projects__grid{grid-template-columns:1fr 1fr}
-    .values__grid{grid-template-columns:1fr 1fr}
+    .team__grid{grid-template-columns:1fr 1fr}
     .hero__aside{padding-left:0;border-left:none;border-top:1px solid rgba(237,232,220,.15);padding-top:24px;flex-direction:row;flex-wrap:wrap;gap:24px}
   }
   @media(max-width:640px){
@@ -179,12 +183,13 @@
     .header__emblem{height:30px}
     .header__logo{font-size:18px;gap:10px}
     .header__logo-wordmark>span{font-size:9px;letter-spacing:.18em}
-    .products,.projects,.values{padding:100px 0}
+    .products,.projects,.team{padding:100px 0}
+    .team__head{margin-bottom:56px}
     .products__grid{grid-template-columns:repeat(2,1fr)}
     .product-card{aspect-ratio:1/1}
     .product-card__name{font-size:22px}
     .product-card__body{left:18px;right:18px;bottom:18px}
-    .projects__grid,.values__grid{grid-template-columns:1fr}
+    .projects__grid,.team__grid{grid-template-columns:1fr}
     .cta__inner{padding:120px 24px}
     .footer{padding:80px 0 32px}
     .footer__bottom{flex-direction:column;gap:8px;text-align:center}
@@ -358,34 +363,47 @@
     </div>
   </section>
 </template>
-<!-- ===== VALUES ===== -->
-<section class="values" id="about">
+<!-- ===== TEAM ===== -->
+<!-- Each card links to that person's interview page (bill-jacobs.html etc.). Headshots: swap the initials div for an <img>. -->
+<section class="team" id="about">
   <div class="container">
-    <div class="values__head">
-      <span class="kicker">Why Four Corners</span>
-      <h2>The <em>partner</em> behind the glass.</h2>
+    <div class="team__head">
+      <span class="kicker">Our Team</span>
+      <h2>The <em>people</em> behind the glass.</h2>
     </div>
-    <div class="values__grid">
-      <div class="val">
-        <div class="val__num">N° i.</div>
-        <h3 class="val__title">Specification expertise</h3>
-        <p class="val__text">Decades on the Carolina coast. We know the code, the loads, and the decisions that separate a beautiful window from one that survives three hurricanes.</p>
-      </div>
-      <div class="val">
-        <div class="val__num">N° ii.</div>
-        <h3 class="val__title">Craftsmanship, curated</h3>
-        <p class="val__text">Every line we carry is held to an exacting standard. From raw timber to reveal, quality is never a line-item to value-engineer.</p>
-      </div>
-      <div class="val">
-        <div class="val__num">N° iii.</div>
-        <h3 class="val__title">Full-service support</h3>
-        <p class="val__text">Design consultation, take-offs, order management, logistics, installation coordination — a single point of accountability.</p>
-      </div>
-      <div class="val">
-        <div class="val__num">N° iv.</div>
-        <h3 class="val__title">Trusted on the coast</h3>
-        <p class="val__text">Architects, GCs, and homeowners return project after project. Our relationships are built on transparency and follow-through.</p>
-      </div>
+    <div class="team__grid">
+      <a href="bill-jacobs.html" class="member">
+        <div class="member__initials" aria-hidden="true">BJ</div>
+        <div class="member__role">Manager</div>
+        <h3 class="member__name">Bill Jacobs</h3>
+        <p class="member__quote">“Whatever the project, I want the finished product to look like it belongs.”</p>
+        <p class="member__focus">Historic window &amp; door replacement, luxury homes, and boutique commercial projects.</p>
+        <span class="member__cta">Read the interview &rarr;</span>
+      </a>
+      <a href="kyle-donnelly.html" class="member">
+        <div class="member__initials" aria-hidden="true">KD</div>
+        <div class="member__role">Outside Sales</div>
+        <h3 class="member__name">Kyle Donnelly</h3>
+        <p class="member__quote">“I like being part of a project from the start and seeing the finished result.”</p>
+        <p class="member__focus">Custom home builders and remodelers.</p>
+        <span class="member__cta">Read the interview &rarr;</span>
+      </a>
+      <a href="ashley-snell.html" class="member">
+        <div class="member__initials" aria-hidden="true">AS</div>
+        <div class="member__role">Outside Sales</div>
+        <h3 class="member__name">Ashley Snell</h3>
+        <p class="member__quote">“I want my customers to know they can count on me.”</p>
+        <p class="member__focus">Architectural windows &amp; exterior doors for multifamily, light commercial, and custom residential.</p>
+        <span class="member__cta">Read the interview &rarr;</span>
+      </a>
+      <a href="drew-dekerlegand.html" class="member">
+        <div class="member__initials" aria-hidden="true">DD</div>
+        <div class="member__role">Outside Sales</div>
+        <h3 class="member__name">Drew DeKerlegand</h3>
+        <p class="member__quote">“The best moment is when everything comes together and we find the right product for the project.”</p>
+        <p class="member__focus">Windows &amp; doors for new residential construction and remodeling.</p>
+        <span class="member__cta">Read the interview &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
