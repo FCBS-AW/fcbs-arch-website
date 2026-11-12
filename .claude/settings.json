@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python -m http.server:*)",
+      "PowerShell(npx serve:*)",
+      "Bash(python -m http.server:*)",
+      "Bash(npx serve:*)"
+    ]
+  }
+}
